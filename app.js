@@ -45,7 +45,6 @@ app.get('/', function(req, res) {
     var draft = null;
     if (req.cookies.draft) {
         draft = serialize.unserialize(new Buffer(req.cookies.draft, 'base64').toString()).msg;
-        console.log(draft);
     }
     MongoClient.connect(db_url, { useNewUrlParser:true, useUnifiedTopology:true }, function(err, db) {
         if (err) {
@@ -222,7 +221,6 @@ app.post('/send', function(req, res) {
         } else if (save != null) {
             console.log('    -- Save');
             var cookie_val = Buffer.from(serialize.serialize({'msg':req.body.message})).toString('base64');
-            console.log(cookie_val);
             res.cookie('draft',cookie_val,{maxAge:900000,httpOnly:true});
         }
     }

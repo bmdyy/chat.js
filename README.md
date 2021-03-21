@@ -11,7 +11,7 @@
 
 A small web app writen in Node.JS to practice NoSQLi and deserialization exploits.
 
-Working exploits may be found in `./exploit`
+Working exploits as well as explainations may be found in `./exploit`
 
 ## How to run locally
 

@@ -20,7 +20,7 @@
                     <form class="form-inline" method="POST" action="/send">
                         <div class="input-group">
                             <% if (draft != null) { %>
-                                <input type="text" class="form-control" name="message" value=<%= draft %> autofocus>
+                                <input type="text" class="form-control" name="message" value="<%= draft %>" autofocus>
                             <% } else { %>
                                 <input type="text" class="form-control" name="message" placeholder="Type a message..." autofocus>
                             <% } %>

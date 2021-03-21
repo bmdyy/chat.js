@@ -3,8 +3,16 @@ body {
     color:#eff3f5;
 }
 
+main {
+    margin-top:1em;
+}
+
 nav {
     border-bottom:2px solid #5b6269;
+}
+
+table {
+    margin-top:1em;
 }
 
 table .author {
@@ -23,4 +31,17 @@ table .author .username {
 
 table .message {
     width:90%;
+}
+
+.msg-form {
+    margin-left:1em;
+    margin-right:1em;
+}
+
+form .txtarea {
+    margin-bottom:1em;
+}
+
+a {
+    text-decoration: none;
 }

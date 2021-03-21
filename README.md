@@ -1,4 +1,4 @@
-![Chat.JS Favicon](https://github.com/bmdyy/chat.js/blob/main/public/assets/chat.svg?raw=true)
+<img src="./public/assets/chat.svg" width="150" height="150" />
 
 # Chat.JS (Vulnerable NodeJS Web-App)
 

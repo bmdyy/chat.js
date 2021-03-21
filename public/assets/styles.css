@@ -1,0 +1,26 @@
+body {
+    background:#212529;
+    color:#eff3f5;
+}
+
+nav {
+    border-bottom:2px solid #5b6269;
+}
+
+table .author {
+    width:10%;
+    border-right:1px solid #5b6269;
+}
+
+table .author .datetime {
+    color:grey;
+    margin-right:0.5em;
+}
+
+table .author .username {
+    font-weight:bold;
+}
+
+table .message {
+    width:90%;
+}

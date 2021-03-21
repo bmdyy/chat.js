@@ -123,11 +123,16 @@ app.post('/register', function(req, res) {
                         throw err;
                     }
                     if (result == null) {
-                        // TODO: Create new user, and redirect to index
+                        var sha256_password = crypto.createHash('sha256').update(password).digest('hex');
+                        dbo.collection("users").insertOne({
+                            username:username,
+                            password:sha256_password
+                        },function() {
+                            res.redirect('/');
+                        });
                     } else {
-                        // TODO: Give the user a proper error message
+                        res.render('pages/register', {session: req.session, error:"User already exists"});
                     }
-                    res.render('pages/register', {session: req.session, error:"Registration failed"});
                 });
             });
         }

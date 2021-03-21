@@ -122,13 +122,16 @@ app.post('/register', function(req, res) {
                         throw err;
                     }
                     if (result == null) {
-                        var sha256_password = crypto.createHash('sha256').update(password).digest('hex');
-                        dbo.collection("users").insertOne({
-                            username:username,
-                            password:sha256_password
-                        },function() {
-                            res.redirect('/');
-                        });
+                        // TODO: Actually insert new users
+                        
+                        // var sha256_password = crypto.createHash('sha256').update(password).digest('hex');
+                        // dbo.collection("users").insertOne({
+                        //     username:username,
+                        //     password:sha256_password
+                        // },function() {
+                        //     res.redirect('/');
+                        // });
+                        res.redirect('/');
                     } else {
                         res.render('pages/register', {session: req.session, error:"User already exists"});
                     }

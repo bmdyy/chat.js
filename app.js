@@ -42,10 +42,6 @@ app.use(cookieParser());
  */
 app.get('/', function(req, res) {
     console.log('[*] ' + req.ip + ' > GET /');
-    var draft = null;
-    if (req.cookies.draft) {
-        draft = serialize.unserialize(new Buffer(req.cookies.draft, 'base64').toString()).msg;
-    }
     MongoClient.connect(db_url, { useNewUrlParser:true, useUnifiedTopology:true }, function(err, db) {
         if (err) {
             throw err;
@@ -71,6 +67,10 @@ app.get('/', function(req, res) {
         ]).toArray(function(err, result) {
             if (err) {
                 throw err;
+            }
+            var draft = null;
+            if (req.session.logged_in && req.cookies.draft) {
+                draft = serialize.unserialize(new Buffer(req.cookies.draft, 'base64').toString()).msg;
             }
             res.render('pages/index', {messages: result, session: req.session, draft:draft});
             db.close();
